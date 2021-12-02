@@ -1,9 +1,9 @@
-const { clear } = require('console');
 const express = require('express');
 const path = require('path');
 const app = express();
-/*const connection = require('./public/scripting/dbconnection.js');
-app.use(express.static('./public'));*/
+/*const connection = require('./public/scripting/dbconnection.js');*/
+
+app.use(express.static('./public'));
 
 
 
@@ -22,12 +22,6 @@ app.get('/consultaralunos.html', function(req, res) {
 app.get('/inseriralunos.html', function(req, res) {
     res.sendFile(path.join(__dirname, './public/inseriralunos.html'));
 })
-
-/*
-app.get('/:nome', function(req, res) {
-    res.send('Hello ' + req.params.nome);
-})*/
-
 
 
 const port = 3002;
